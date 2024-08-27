@@ -2,7 +2,7 @@ using SuperExpression.Benchmark.BenchmarkClass;
 
 namespace SuperExpression.Tests
 {
-    public class UnitTest1
+    public class SwitchVsDictionaryTest
     {
         [Fact]
         public void FSwitchVsDictionary()
@@ -10,7 +10,9 @@ namespace SuperExpression.Tests
             var a = new SwitchVsDictionary();
             a.Setup();
             a.DiscoveryByDictionary();
-            a.DiscoveryBySwitchCase();
+            a.DiscoveryByConcurrentDictionary();
+            a.DiscoveryBySwitchCaseExpressionTree();
+            a.DiscoveryBySwitchCaseHardCoded();
         }
     }
 }

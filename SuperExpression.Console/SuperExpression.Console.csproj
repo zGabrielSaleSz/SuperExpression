@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SuperExpression.Benchmark\SuperExpression.Benchmark.csproj" />
     <ProjectReference Include="..\SuperExpression\SuperExpression.csproj" />
   </ItemGroup>
 

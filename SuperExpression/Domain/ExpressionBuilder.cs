@@ -45,7 +45,9 @@ namespace SuperExpression.Domain
             // default case returns null
             var defaultCase = Expression.Constant(default(TValue), valueType);
             var switchExpression = Expression.Switch(parameter, defaultCase, cases.ToArray());
-            return Expression.Lambda<Func<TKey, TValue>>(switchExpression, parameter).Compile();
+            // if you add a breakpoint here, you'll see the logic expression;
+            var lambda = Expression.Lambda<Func<TKey, TValue>>(switchExpression, parameter);
+            return lambda.Compile();
         }
 
         public static void Switch<T>(T switchMatch, params T[] possibleValues)
